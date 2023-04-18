@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario a CV</title>
+</head>
+<body>
+    <form>
+        <label for="fname">Nombre: </label>
+        <input type="text" id="nombre" name="nombre" value="Glem"><br><br>
+        <label for="apellido">Apellido: </label>
+        <input type="text" id="apellido" name="apellido" value="Diaz"><br><br>
+
+        <label for="nacimeinto">Fecha de Nacimiento: </label>
+        <input type="date" id="nacimiento" name="naciminento"><br><br>
+
+        <label for="ocupacion">Ocupacion: </label>
+        <input type="text" id="ocupacion" name="ocupacion"><br><br>
+
+        <label for="correo">Correo Electronico: </label>
+        <input type="email" id="correo" name="correo"><br><br>
+
+        <label for="telefono">Numero de Telefono: </label>
+        <input type="tel" id="telefono" name="telefono" placeholder="999 999 999" pattern="[0-9]{9}"><br><br>
+
+        <label for="Nacionalidad">Nacionalidad: </label><br>
+        <select name="pais">
+            <option value"es"> España</option>
+            <option value"mx" selected="selected"> México</option>
+            <option value"co"> Colombia</option>
+        </select><br><br>
+
+        <label for="ingles">Nivel de Ingles: </label><br>
+        <input type="radio" id="basico" name="ingles" value="Basico">
+        <label for="basico">Basico</label><br>
+        <input type="radio" id="intermedio" name="ingles" value="Intermedio">
+        <label for="intermedio">Intermedio</label><br>
+        <input type="radio" id="avanzado" name="ingles" value="Avanzado">
+        <label for="avanzado">Avanzado</label><br>
+        <input type="radio" id="fluido" name="ingles" value="Fluido">
+        <label for="fluido">Fluido</label><br><br>
+
+        <label for="lenguaje">Lenguajes de programación: </label><br>
+        <input type="checkbox" id="lenguaje1" name="lenguaje1" value="C++">
+        <label for="lenguaje1"> C++</label><br>
+        <input type="checkbox" id="lenguaje2" name="lenguaje2" value="Phyton">
+        <label for="lenguaje2"> Phyton</label><br>
+        <input type="checkbox" id="lenguaje3" name="lenguaje3" value="Ruby">
+        <label for="lenguaje3"> Ruby</label><br>
+        <input type="checkbox" id="lenguaje4" name="lenguaje4" value="Fortran">
+        <label for="lenguaje4"> Fortran</label><br>
+        <input type="checkbox" id="lenguaje5" name="lenguaje5" value="Lua">
+        <label for="lenguaje5"> Lua</label><br>
+        <input type="checkbox" id="lenguaje6" name="lenguaje6" value="Cobol">
+        <label for="lenguaje6"> Cobol</label><br><br>
+
+        <label for="aptitudes"> Aptitudes: </label><br>
+        <input list="aptitudes" name="aptitud">
+        <datalist id="aptitudes">
+            <option value="Competencias digitales">
+            <option value="Liderazgo">
+            <option value="Creatividad">
+            <option value="Multilingüismo">
+            <option value="Adaptabilidad">
+        </datalist><br><br>
+
+        <label for="habilidades">Habilidades: </label><br>
+        <input type="checkbox" id="habilidad1" name="habilidad1" value="Asumir las críticas de forma constructiva">
+        <label for="habilidad1"> Asumir las críticas de forma constructiva</label><br>
+        <input type="checkbox" id="habilidad2" name="habilidad2" value="El pensamiento crítico/lógico">
+        <label for="habilidad2"> El pensamiento crítico/lógico</label><br>
+        <input type="checkbox" id="habilidad3" name="habilidad3" value="Capacidad Organizativa">
+        <label for="habilidad3"> Capacidad Organizativa</label><br><br>
+
+        <label for="perfil">Perfil: </label><br>
+        <textarea name="Perfil" rows="10" cols="30">Define tu perfil en pocas palabras.</textarea>
+        <br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+</body>
+</html>
