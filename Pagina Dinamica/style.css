@@ -1,0 +1,66 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    text-align: center;
+    background-image: url('imagenes/equipo-de-trabajo.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.grid-container{
+    display:grid;
+    grid-template-columns:auto;
+    grid-template-rows:auto;
+    justify-content:center;
+}
+
+form{
+    padding:50px 20px;
+    margin: calc(25% +100px);
+    margin-top:70px;
+    padding-top:28px;
+    background-color:#cccccc96;
+    color:#000000;
+}
+
+h1{
+    text-align:center;
+    padding:12px;
+    color:#fff;
+    background-color:#cf8effa5;
+}
+
+input{
+    width:calc(100%-20px);
+    padding: 9px;
+    margin:auto;
+    margin-top:12px;
+    font-size:16px;
+}
+
+input[type='submit']{
+    background-color: #0008ff;
+    color:#fff;
+    width: calc(80% - 20px);
+    margin:0 10%;
+    margin-top:22px;
+    border:none;
+}
+
+.ok{
+    text-align:center;
+    width:100%;
+    padding:12px;
+    background-color: #4e8;
+    color:#fff;
+}
+
+.bad {
+    text-align: center;
+    width: 100%;
+    padding: 12px;
+    background-color: #a22;
+    color: #fff;
+}
