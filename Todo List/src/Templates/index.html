@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Tareas</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lista de Tareas</h1>
+
+    <form action="/" method="POST">
+        <input type="text" name="task" placeholder="Ingrese una tarea" required>
+        <button type="submit">Agregar tarea</button>
+    </form>
+    <br />
+
+    <form action="/complete_all" method="POST">
+        <button type="submit" id="complete-all-button">Marcar todas como completadas</button>
+    </form>
+
+
+    <ol>
+        {% for idx, task in enumerated_tasks %}
+        <li>
+            <input type="checkbox" name="complete" value="{{ idx }}" {% if task['completed'] %}checked{% endif %} onchange="handleCheckboxChange(this, {{ idx }})">
+            <label {% if task['completed'] %}class="completed" {% endif %}>{{ task['text'] }}</label>
+            <button type="button" onclick="handleDeleteTask({{ task['id'] }})">X</button>
+        </li>
+        {% endfor %}
+    </ol>
+
+    <script>
+        function handleDeleteTask(taskId) {
+            fetch(`/delete/${taskId}`, {
+                method: 'GET',
+            })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.reload(); // Recargar la página después de eliminar la tarea
+                    }
+                });
+        }
+
+        function handleCheckboxChange(checkbox, taskId) {
+            const label = checkbox.nextElementSibling;
+            label.classList.toggle('completed', checkbox.checked);
+            updateCompletionStatus(taskId, checkbox.checked);
+        }
+
+        function updateCompletionStatus(taskId, completed) {
+            fetch('/update_completion', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    task_id: taskId,
+                    completed: completed
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                });
+        }
+
+        document.getElementById('complete-all-button').addEventListener('click', function () {
+            var checkboxes = document.getElementsByName('complete');
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = true;
+                checkboxes[i].nextElementSibling.classList.add('completed');
+                updateCompletionStatus(checkboxes[i].value, true);
+            }
+        });
+    </script>
+
+</body>
+</html>

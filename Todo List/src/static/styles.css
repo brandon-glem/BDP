@@ -1,0 +1,51 @@
+﻿/* styles.css */
+
+@font-face {
+    font-family: 'DK Crayon Crumble';
+    src: url('ruta-a-la-fuente/NombreFuente.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: "DK Crayon Crumble";
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.board {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.task {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+    .task .checkbox {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .task .label {
+        margin-left: 30px;
+        display: inline-block;
+        text-decoration: none;
+        color: #000;
+        font: DK Crayon Crumble;
+    }
+
+        .task .label.completed {
+            text-decoration: line-through;
+            color: #ff0000;
+        }
