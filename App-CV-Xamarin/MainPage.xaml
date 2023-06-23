@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MainPage">
+    <StackLayout Margin="20">
+        <Label Text="Nombre" FontSize="Title" />
+        <Entry x:Name="NombreEntry" />
+
+        <Label Text="Apellidos" FontSize="Title" />
+        <Entry x:Name="ApellidosEntry" />
+
+        <Label Text="Fecha de nacimiento" FontSize="Title" />
+        <DatePicker x:Name="FechaNacimientoPicker" />
+
+        <Label Text="Correo electrónico" FontSize="Title" />
+        <Entry x:Name="CorreoElectronicoEntry" />
+
+        <Label Text="Nacionalidad" FontSize="Title" />
+        <Picker x:Name="PaisesPicker" />
+
+        <Label Text="Nivel de inglés" FontSize="Title" />
+        <Picker x:Name="InglesPicker" />
+
+        <Label Text="Lenguajes de programación" FontSize="Title" />
+        <ListView x:Name="LenguajesListView"
+          ItemTapped="LenguajesListView_ItemTapped">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>C++</x:String>
+                    <x:String>Java</x:String>
+                    <x:String>Python</x:String>
+                    <x:String>Ruby</x:String>
+                </x:Array>
+            </ListView.ItemsSource>
+        </ListView>
+
+        <Button Text="Enviar" Clicked="EnviarButton_Clicked" />
+    </StackLayout>
+</ContentPage>
